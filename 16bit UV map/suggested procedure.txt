@@ -1,0 +1,35 @@
+Suggested procedure for 16bit resolution UV map procurement
+
+Disable all color filtering (interpolation) from the software which does the projection warping if possible.
+A UVmap is a pixel-to-pixel mapping so it should be as accurate as possible.
+Any aliasing artefacts you might see on the resulting UV maps gets smoothed out automagically in runtime texture interpolation.
+It makes sense to pick a UVmap resolution slightly bigger, but closely matching the final presentation screen resolution.
+
+
+Rendering the Base UV map:
+It's safest to use one of the upscaled UVmap versions in the prescaled/ folder. (UVmap_*.png)
+If lack of color filtering can be trusted, it's ok to use the original UVmap_256.png for base UV.
+Take the base UV map and save it's warped version.
+The save resolution should be a power of 2 square, such as 2048x2048.
+(This bitmap is also a standard 8x8bit UVmap.)
+
+Rendering the Detail UV map:
+For optimal quality, take UVmap_detail_1of128.png, REPEAT it 128x128 times across the area.
+This would give us the theoretical resolution of 65536x65536 to work with.
+Do the warp and save the image as a power of 2 square matching the Base UV resolution.
+If the texture repeat cannot be done or other issues are encountered, pick one of the pre-scaled detail-textures. (UVmap_detail_*.png)
+Pick as high resolution one as possible, and perform the same procedure as with the base UV map and save to a power of 2 resolution.
+
+
+If using the textures separately, the base UV can be smaller with no quality loss.
+If using combined single 32bit texture, the detail texture resolution should match the base UV map's.
+Using the combined 32bit texture is probably the preferred way to go since it should save a lot of texture memory.
+
+To combine the UV maps, put them in the "combine UVs to single 32bit image" folder.
+Open a commandline and run "combineUVs.bat UVmap.png UVmap_detail.png"
+
+
+When importing to the engine, For best quality set these texture settings;
+Texture Type: Advanced
+Generate Mip Maps: off
+Format: RGBA32 or Truecolor        <- this one is especially important if you forget to touch the others
