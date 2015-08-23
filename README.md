@@ -13,7 +13,7 @@ Disable "**DomeRendering/Camera: fisheye preview**".
 Build project.  
 
 
-#16bit resolution UV distortion map creation
+#16bit UV distortion map creation
 Disable all color filtering (interpolation) from the projection software if possible.
 A UVmap is a pixel-to-pixel mapping so it should be as accurate as possible.
 Any aliasing artefacts you might see on the resulting UV maps gets smoothed out automagically in runtime texture interpolation.
