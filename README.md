@@ -35,8 +35,8 @@ Pick as high resolution one as possible, and perform the same procedure as with 
 To combine the UV maps, put them in the "**combine UVs to single 32bit image**" folder.  
 Open a commandline and run "**combineUVs.bat UVmap.png UVmap_detail.png**"
 
-###When importing to the engine, For best quality set these texture settings;
-Texture Type: Advanced
-Generate Mip Maps: off
+###When importing to the engine, For best quality set these texture settings;  
+Texture Type: Advanced  
+Generate Mip Maps: off  
 Format: RGBA32 or Truecolor        <- this one is especially important
 
