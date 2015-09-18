@@ -22,7 +22,6 @@ Shader "Custom/distortion_16bit_mask" {
             #pragma fragment frag
             #define UNITY_PASS_FORWARDBASE
             #include "UnityCG.cginc"
-            #pragma multi_compile_fwdbase_fullshadows
             #pragma exclude_renderers xbox360 ps3 flash 
             #pragma target 3.0
             uniform sampler2D _MaskTexture;
@@ -52,10 +51,10 @@ Shader "Custom/distortion_16bit_mask" {
 				fixed2 roughUV=distortionmap.rg; // separate 8bit rough ...
 				fixed2 detailUV=distortionmap.ba; // ... and detail from combined map
 				
-                uint2 roughUVsteps = roughUV*256; // low detail steps
+                fixed2 roughUVsteps = roughUV*256; // low detail steps
 				//fixed2 detailUVramps=abs( detailUV - fmod(roughUVsteps,2) ); // high detail ramps
-				fixed2 detailUVramps=abs( detailUV - (roughUVsteps%2) ); // high detail ramps
-                fixed2 combinedUV = ( (roughUVsteps + detailUVramps)/256 ).rg; // combined 16bit UV
+				float2 detailUVramps=abs( detailUV - (floor(roughUVsteps)%2) ); // high detail ramps
+                float2 combinedUV = ( (roughUVsteps + detailUVramps)/256 ).rg; // combined 16bit UV
                 fixed3 finalColor = tex2D(_Rendertexture,TRANSFORM_TEX(combinedUV, _Rendertexture)).rgb*mask;
                 return fixed4(finalColor,1);
             }
