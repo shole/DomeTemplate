@@ -14,8 +14,8 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
-  defaultScreenWidth: 1024
-  defaultScreenHeight: 768
+  defaultScreenWidth: 4096
+  defaultScreenHeight: 1080
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_RenderingPath: 3
@@ -27,7 +27,7 @@ PlayerSettings:
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
-  displayResolutionDialog: 1
+  displayResolutionDialog: 0
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
   allowedAutorotateToLandscapeRight: 1
@@ -121,14 +121,6 @@ PlayerSettings:
   iOSLaunchScreenFillPct: 100
   iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
-  iOSLaunchScreeniPadType: 0
-  iOSLaunchScreeniPadImage: {fileID: 0}
-  iOSLaunchScreeniPadBackgroundColor:
-    serializedVersion: 2
-    rgba: 0
-  iOSLaunchScreeniPadFillPct: 100
-  iOSLaunchScreeniPadSize: 100
-  iOSLaunchScreeniPadCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}

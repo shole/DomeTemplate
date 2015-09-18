@@ -51,7 +51,7 @@ Shader "Custom/distortion_16bit_mask" {
 				fixed2 roughUV=distortionmap.rg; // separate 8bit rough ...
 				fixed2 detailUV=distortionmap.ba; // ... and detail from combined map
 				
-                fixed2 roughUVsteps = roughUV*256; // low detail steps
+                uint2 roughUVsteps = roughUV*256; // low detail steps
 				//fixed2 detailUVramps=abs( detailUV - fmod(roughUVsteps,2) ); // high detail ramps
 				float2 detailUVramps=abs( detailUV - (floor(roughUVsteps)%2) ); // high detail ramps
                 float2 combinedUV = ( (roughUVsteps + detailUVramps)/256 ).rg; // combined 16bit UV

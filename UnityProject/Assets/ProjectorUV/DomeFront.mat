@@ -31,6 +31,20 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _UVmap
+        second:
+          m_Texture: {fileID: 2800000, guid: 5de3673e3fc9f4746b470b968ac18ecd, type: 3}
+          m_Scale: {x: -1, y: 1}
+          m_Offset: {x: 1, y: 0}
+      data:
+        first:
+          name: _MaskTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: c5ffca65818ca734a8220c2baacbf5de, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _distortionUV
         second:
           m_Texture: {fileID: 2800000, guid: 8ae209f98b8a1724c8f4629a7b4382b2, type: 3}
@@ -55,20 +69,6 @@ Material:
           name: _node18
         second:
           m_Texture: {fileID: 2800000, guid: 983082ec4d2661547987f41be0db6f03, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _UVmap
-        second:
-          m_Texture: {fileID: 2800000, guid: e31bf5d287aac514fa7711deed73f053, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MaskTexture
-        second:
-          m_Texture: {fileID: 2800000, guid: c5ffca65818ca734a8220c2baacbf5de, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
